@@ -6,6 +6,8 @@ export default class UtilityBar extends Component {
     return (
       <div className="utilitybar">
         <div>UtilityBar Component</div>
+        <div>Game Selection</div>
+        <div>User Scores</div>
       </div>
     )
   };

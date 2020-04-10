@@ -6,6 +6,9 @@ export default class MainCanvas extends Component {
     return (
       <div className="content">
         <div>MainCanvas Component</div>
+        <div>User SignIng</div>
+        <div>Game Board</div>
+        <div>Leader Board</div>
       </div>
     )
   };
