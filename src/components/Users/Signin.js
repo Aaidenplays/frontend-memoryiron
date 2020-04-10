@@ -3,7 +3,22 @@ import React, { Component } from 'react'
 class Signin extends Component {
 constructor(){
     super()
-    
+    this.state = {
+        username: undefined,
+        password: undefined
+    }
+}
+
+handleUsername = (e) => {
+    this.setState({
+        username: e.target.vaue
+    })
+}
+
+handlePassword = (e) => {
+    this.setState({
+        password: e.target.vaue
+    })
 }
 
   render () {
