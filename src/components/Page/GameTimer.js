@@ -4,7 +4,7 @@ export default class GameTimer extends Component {
   render() {
     return (
       <div>
-        Game Timer Component
+        * Game Timer Component
       </div>
     )
   }

@@ -4,7 +4,7 @@ export default class GameSelection extends Component {
   render() {
     return (
       <div>
-        Game Selection Drop down
+        * Game Selection Drop down
       </div>
     )
   }

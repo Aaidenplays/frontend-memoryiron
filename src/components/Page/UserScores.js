@@ -4,7 +4,7 @@ export default class UserScores extends Component {
   render() {
     return (
       <div>
-        User Scores Component.
+        * User Scores Component.
       </div>
     )
   }
