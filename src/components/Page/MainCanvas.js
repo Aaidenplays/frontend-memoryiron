@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import GameBoard from './GameBoard';
+import LeaderBoard from './LeaderBoard';
+import UserLogin from './UserLogin';
 
 export default class MainCanvas extends Component {
 
   render() {
     return (
       <div className="content">
-        <div>MainCanvas Component</div>
-        <div>User SignIng</div>
-        <div>Game Board</div>
-        <div>Leader Board</div>
+        <div>MainCanvas Container Component</div>
+        <UserLogin />
+        <GameBoard />
+        <LeaderBoard />
       </div>
     )
   };
