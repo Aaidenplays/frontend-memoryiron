@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GameTimer from './GameTimer';
 
 export default class Header extends Component {
 
@@ -6,7 +7,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <div>Memroyiron</div>
-        <div>Game Timer</div>
+        <GameTimer />
       </div>
     )
   };
