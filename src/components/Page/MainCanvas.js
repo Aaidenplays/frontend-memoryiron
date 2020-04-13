@@ -8,9 +8,9 @@ export default class MainCanvas extends Component {
   render() {
     return (
       <div className="content">
-        <div>MainCanvas Container Component</div>
+        {/* <div>MainCanvas Container Component</div> */}
         <UserLogin />
-        <GameBoard />
+        <GameBoard game={this.props.game}/>
         <LeaderBoard />
       </div>
     )

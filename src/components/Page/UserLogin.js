@@ -4,7 +4,6 @@ export default class UserLogin extends Component {
   render() {
     return (
       <div>
-        * User Login Component.
       </div>
     )
   }

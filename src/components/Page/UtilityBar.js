@@ -7,8 +7,7 @@ export default class UtilityBar extends Component {
   render() {
     return (
       <div className="utilitybar">
-        <div>UtilityBar Container Component</div>
-        <GameSelection />
+        <GameSelection handleSelect={this.props.handleSelect} game={this.props.game}/>
         <UserScores />
       </div>
     )
