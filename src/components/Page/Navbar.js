@@ -14,6 +14,13 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
+      <NavLink 
+        to="/home"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'darkblue'
+          }}>Home</NavLink>
         <NavLink
           to="/signin"
           /* set exact so it knows to only set activeStyle when route is deeply equal to link */
