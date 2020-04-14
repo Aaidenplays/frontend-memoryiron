@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Memoryiron from './components/Page/Memoryiron.js'
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
+    this.state = {
       isLoggedIn: false,
       user: undefined
     }
@@ -25,21 +25,22 @@ class App extends React.Component {
   }
 
   handleNavSwitch = () => {
-    return [<Navbar />, 
-    <Route exact path='/signin' render={() => <Signin handleLogIn={this.setIsLoggedIn}/>} />,
-    <Route exact path='/signup' component={Signup} />]
+    return [
+      <Navbar />,
+      <Route exact path='/signin' render={() => <Signin handleLogIn={this.setIsLoggedIn} />} />,
+      <Route exact path='/signup' component={Signup} />
+    ]
   }
-
 
   render() {
     return (
       <div>
-    <Router>
-      <div className='App'>
-      {this.state.isLoggedIn ? <Memoryiron user={this.state.user} />:this.handleNavSwitch()}
+        <Router>
+          <div className='App'>
+            {this.state.isLoggedIn ? <Memoryiron user={this.state.user} /> : this.handleNavSwitch()}
+          </div>
+        </Router>
       </div>
-    </Router>
-  </div>
     )
   }
 }
