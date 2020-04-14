@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GameTimer from './GameTimer';
-import NavBar from './NavBar';
+import Navbar from './Navbar';
 
 export default class Header extends Component {
 
@@ -9,7 +9,7 @@ export default class Header extends Component {
       <div className="header">
         <h1 className="ui header">Memroyiron</h1>
         <GameTimer />
-        <NavBar />
+        <Navbar />
       </div>
     )
   };
