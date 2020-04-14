@@ -6,7 +6,7 @@ export default class GameCards extends Component {
   render() {
     return (
       <Card>
-        <div>
+        <div onClick={() => this.props.cardChoice(this.props.card)}>
           <img className="ui image fluid" src={this.props.card.thumbnailUrl} alt='card'></img>
         </div>
       </Card>

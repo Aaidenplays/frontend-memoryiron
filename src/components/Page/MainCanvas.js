@@ -6,13 +6,19 @@ import { Container } from 'semantic-ui-react';
 
 
 export default class MainCanvas extends Component {
-  
+
   render() {
     return (
       <Container>
         <div className="content">
           <UserLogin />
-          {this.props.gridSize > 1 ? <GameBoard handleSelect={this.props.handleSelect} game={this.props.game} gridSize={this.props.gridSize}/> : null}
+          {this.props.gridSize > 1 ?
+            <GameBoard
+              handleSelect={this.props.handleSelect}
+              game={this.props.game}
+              gridSize={this.props.gridSize}
+              cardChoice={this.props.cardChoice}
+            /> : null}
           <LeaderBoard />
         </div>
       </Container>
