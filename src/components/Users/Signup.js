@@ -1,75 +1,93 @@
 import React, { Component } from 'react'
+import { Input } from 'semantic-ui-react'
+
 
 class Signup extends Component {
   constructor () {
     super()
     this.state = {
       username: undefined,
-      password: undefined,
+      // password: undefined,
       bio: undefined,
       avatar: undefined
     }
   }
 
-  postUser = (e) => {
+  postUser = e => {
     e.preventDefault()
-    fetch('http://localhost:3001/api/v1/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          user: {
-            username: this.state.username,
-            password: this.state.password,
-            bio: this.state.bio,
-            avatar: this.state.avatar
-          }
-        })
+    console.log(this.state.password)
+    fetch('http://localhost:3001/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username: this.state.username,
+          // password: this.state.password,
+          bio: this.state.bio,
+          avatar: this.state.avatar
+        }
       })
-        .then(r => r.json())
-        .then(console.log)
-  }
+    })
+      .then(r => r.json())
+      .then(data => {
+          console.log(data)
+        })
+}
+  //   handleAuthCreate = () =>{
+  //       console.log(this.state.username)
+  //     fetch('http://localhost:3001/api/v1/login', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Accept: 'application/json'
+  //         },
+  //         body: JSON.stringify( this.state )
+  //       })
+      
+  //     .then(resp => resp.json())
+  //     .then(data => console.log(data))
+  // }
 
-  handleUsername = (e) => {
+  handleUsername = e => {
     this.setState({
-        username: e.target.value
+      username: e.target.value
     })
   }
 
-  handlePassword = (e) => {
+  handlePassword = e => {
     this.setState({
-        password: e.target.value
+      password: e.target.value
     })
   }
 
-  handleBio = (e) => {
+  handleBio = e => {
     this.setState({
-        bio: e.target.value
+      bio: e.target.value
     })
   }
 
-  handleAvatar = (e) => {
+  handleAvatar = e => {
     this.setState({
-        avatar: e.target.value
+      avatar: e.target.value
     })
   }
-  
 
   render () {
     return (
-      <div>
+      <div><br/>
         <form onSubmit={this.postUser}>
           <label>Username</label>
-          <input type='text' onChange={this.handleUsername}/>
-          <label>Password</label>
-          <input type='password' onChange={this.handlePassword}/>
+          <input className='ui input' type='text' onChange={this.handleUsername} />
+          {/* <label>Password</label>
+          <input type='password' onChange={this.handlePassword} /> */}
           <label>Bio</label>
-          <input type='textarea' onChange={this.handleBio}/>
+          <input className='ui input' type='text' onChange={this.handleBio} />
           <label>avatar</label>
-          <input type='url' onChange={this.handleAvatar}/>
-        <input type='submit' value='Submit'/>
+          <input className='ui input' type='text' onChange={this.handleAvatar} />
+          <input type='submit' value='Submit' />
         </form>
       </div>
     )

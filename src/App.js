@@ -1,21 +1,47 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
-// import Signup from './components/Users/Signup';
-// import Signin from './components/Users/Signin';
-// import Navbar from './components/Page/';
+import Signup from './components/Users/Signup';
+import Signin from './components/Users/Signin';
+import Navbar from './components/Page/NavbarUser';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Memoryiron from './components/Page/Memoryiron.js'
 
-function App () {
-  return (
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state={
+      isLoggedIn: false,
+      user: undefined
+    }
+  }
+
+  setIsLoggedIn = (user) => {
+    this.setState({
+      isLoggedIn: !this.state.isLoggedIn
+    })
+    this.setState({
+      user
+    })
+  }
+
+  handleNavSwitch = () => {
+    return [<Navbar />, 
+    <Route exact path='/signin' render={() => <Signin handleLogIn={this.setIsLoggedIn}/>} />,
+    <Route exact path='/signup' component={Signup} />]
+  }
+
+
+  render() {
+    return (
+      <div>
     <Router>
       <div className='App'>
-        <Memoryiron />
-        {/* <Route exact path='/signin' component={Signin} />
-        <Route exact path='/signup' component={Signup} /> */}
+      {this.state.isLoggedIn ? <Memoryiron user={this.state.user} />:this.handleNavSwitch()}
       </div>
     </Router>
-  )
-};
+  </div>
+    )
+  }
+}
 
 export default App
