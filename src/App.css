@@ -17,6 +17,10 @@ body {
   }
 }
 
+.game-cards:hover {
+  transform: scale(1.05)
+}
+
 .App-header {
   /* background-color: #282c34; */
   min-height: 100vh;

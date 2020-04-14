@@ -52,7 +52,7 @@ class Signin extends Component {
 
   render () {
     return (
-      <div>
+      <div><br/>
         <form onSubmit={this.authUser}>
           <label>Username</label>
           <input className='ui input' type='text' onChange={this.handleUsername} />
