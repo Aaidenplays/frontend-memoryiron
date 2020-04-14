@@ -36,13 +36,11 @@ export default class Memoryiron extends Component {
   };
 
   nullGame = () => {
-    // console.log('no game selected');
     this.setState({ playGame: [] })
     this.setState({ gridSize: 1 })
       };
 
   fourByFour = () => {
-    // console.log('easy game selected');
     let shuffleCards = this.state.gameBoard.sort(() => Math.random() - 0.5);
     let selectedCardsA = shuffleCards.slice(0, 8);
     let selectedCardsB = shuffleCards.slice(0, 8);
@@ -57,7 +55,6 @@ export default class Memoryiron extends Component {
   };
 
   sixBySix = () => {
-    // console.log('medium game selected');
     let shuffleCards = this.state.gameBoard.sort(() => Math.random() - 0.5);
     let selectedCardsA = shuffleCards.slice(0, 18);
     let selectedCardsB = shuffleCards.slice(0, 18);
@@ -72,7 +69,6 @@ export default class Memoryiron extends Component {
   };
 
   eightByEight = () => {
-    // console.log('hard game selected');
     let shuffleCards = this.state.gameBoard.sort(() => Math.random() - 0.5);
     let selectedCardsA = shuffleCards.slice(0, 32);
     let selectedCardsB = shuffleCards.slice(0, 32);
