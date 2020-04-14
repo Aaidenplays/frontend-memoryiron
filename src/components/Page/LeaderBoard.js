@@ -4,6 +4,7 @@ export default class LeaderBoard extends Component {
   render() {
     return (
       <div>
+        * Leader Boards
       </div>
     )
   }

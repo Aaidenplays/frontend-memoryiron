@@ -10,13 +10,12 @@ function App () {
   return (
     <Router>
       <div className='App'>
-        
         <Memoryiron />
         <Route exact path='/signin' component={Signin} />
         <Route exact path='/signup' component={Signup} />
       </div>
     </Router>
   )
-}
+};
 
 export default App

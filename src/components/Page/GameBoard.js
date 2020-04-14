@@ -7,7 +7,7 @@ export default class GameBoard extends Component {
   render() {
     return (
       <div>
-        <h1>Game Board</h1>
+        <h2>Game Board</h2>
         <Card.Group itemsPerRow={this.props.gridSize}>
           {this.props.game.map((card, idx) => (
             <GameCards key={idx} card={card} />
@@ -15,5 +15,5 @@ export default class GameBoard extends Component {
         </Card.Group>
       </div>
     )
-  }
-}
+  };
+};
