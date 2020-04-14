@@ -87,7 +87,7 @@ export default class Memoryiron extends Component {
     return (
       <Container>
         <div>
-          <Header />
+          <Header user={this.props.user} />
           <UtilityBar handleSelect={this.handleSelect} game={this.state.gameBoard} />
           <MainCanvas handleSelect={this.handleSelect} game={this.state.playGame} gridSize={this.state.gridSize} />
         </div>
