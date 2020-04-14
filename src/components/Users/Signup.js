@@ -77,7 +77,7 @@ class Signup extends Component {
 
   render () {
     return (
-      <div>
+      <div><br/>
         <form onSubmit={this.postUser}>
           <label>Username</label>
           <input className='ui input' type='text' onChange={this.handleUsername} />

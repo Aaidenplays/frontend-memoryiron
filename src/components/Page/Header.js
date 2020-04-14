@@ -9,7 +9,7 @@ export default class Header extends Component {
       <div className="header">
         {console.log(this.props.user)}
         {this.props.user ? (<p>Current User: {this.props.user.username}</p>) : null}
-        <h1 className="ui header">Memroyiron</h1>
+        <h1 className="ui header">Memoryiron</h1>
         <GameTimer />
         <NavbarGamePage />
       </div>
