@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Input } from 'semantic-ui-react'
+
 
 class Signup extends Component {
   constructor () {
@@ -78,13 +80,13 @@ class Signup extends Component {
       <div>
         <form onSubmit={this.postUser}>
           <label>Username</label>
-          <input type='text' onChange={this.handleUsername} />
+          <input className='ui input' type='text' onChange={this.handleUsername} />
           {/* <label>Password</label>
           <input type='password' onChange={this.handlePassword} /> */}
           <label>Bio</label>
-          <input type='textarea' onChange={this.handleBio} />
+          <input className='ui input' type='text' onChange={this.handleBio} />
           <label>avatar</label>
-          <input type='url' onChange={this.handleAvatar} />
+          <input className='ui input' type='text' onChange={this.handleAvatar} />
           <input type='submit' value='Submit' />
         </form>
       </div>

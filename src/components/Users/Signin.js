@@ -54,7 +54,7 @@ class Signin extends Component {
       <div>
         <form onSubmit={this.authUser}>
           <label>Username</label>
-          <input classname='ui input' type='text' onChange={this.handleUsername} />
+          <input className='ui input' type='text' onChange={this.handleUsername} />
           {/* <label>Password</label>
           <input type='password' onChange={this.handlePassword}/> */}
           <input type='submit' value='submit' />
