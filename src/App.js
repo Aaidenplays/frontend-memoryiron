@@ -11,8 +11,10 @@ function App () {
     <Router>
       <div className='App'>
         <Memoryiron />
+        //<Navbar /> <br/>
         <Route exact path='/signin' component={Signin} />
         <Route exact path='/signup' component={Signup} />
+        <Route exact path='/home' component={Home} />
       </div>
     </Router>
   )
