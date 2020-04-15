@@ -44,7 +44,6 @@ class GameCards extends React.Component {
           <Cardfront card={this.props.card} onClick={this.handleClick}>
             This is the front of the card.
           </Cardfront>
-
         </ReactCardFlip>
       </Card>
     )
