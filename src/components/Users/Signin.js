@@ -44,7 +44,7 @@ class Signin extends Component {
         })
         this.setState({
           redirect: true
-        })
+        }) 
         {this.props.handleLogIn(this.state.user)}
         //Use redirect and pass this user as a current_user prop
       })
