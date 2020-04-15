@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 
 
 class Signin extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       username: undefined,
@@ -26,7 +26,7 @@ class Signin extends Component {
       password: e.target.value
     })
   }
-  
+
   authUser = e => {
     e.preventDefault()
     // const token = localStorage.token
@@ -44,15 +44,15 @@ class Signin extends Component {
         })
         this.setState({
           redirect: true
-        }) 
-        {this.props.handleLogIn(this.state.user)}
+        })
+        { this.props.handleLogIn(this.state.user) }
         //Use redirect and pass this user as a current_user prop
       })
   }
 
-  render () {
+  render() {
     return (
-      <div><br/>
+      <div><br />
         <form onSubmit={this.authUser}>
           <label>Username</label>
           <input className='ui input' type='text' onChange={this.handleUsername} />
@@ -61,11 +61,11 @@ class Signin extends Component {
           <input type='submit' value='submit' />
         </form>
         {this.state.redirect ?
-         <Redirect to={{
-          pathname: '/home',
-          state: {currentUser: this.state.user}
-        }}/>
-        : null}
+          <Redirect to={{
+            pathname: '/home',
+            state: { currentUser: this.state.user }
+          }} />
+          : null}
       </div>
     )
   }
