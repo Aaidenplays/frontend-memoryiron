@@ -34,9 +34,10 @@ class GameCards extends React.Component {
   render () {
     return (
       <Card>
+      <div onClick={() => this.props.cardChoice(this.props.card)}>
       <ReactCardFlip
           isFlipped={this.state.isFlipped}
-          flipDirection='vertical'
+          flipDirection='horizontal'
         >
           <Cardback onClick={this.handleClick}>
             This is the back of the card.
@@ -45,6 +46,7 @@ class GameCards extends React.Component {
             This is the front of the card.
           </Cardfront>
         </ReactCardFlip>
+        </div>
       </Card>
     )
   }
