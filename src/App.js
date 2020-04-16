@@ -5,6 +5,7 @@ import Signin from './components/Users/Signin';
 import Navbar from './components/Page/NavbarUser';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Memoryiron from './components/Page/Memoryiron.js'
+import Audios from './components/Audios';
 
 class App extends React.Component {
   constructor() {
@@ -35,10 +36,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Router>
-          <div className='App'>
-            {this.state.isLoggedIn ? <Memoryiron user={this.state.user} /> : this.handleNavSwitch()}
-          </div>
+      <Audios/>
+    <Router>
+      <div className='App'>
+      {this.state.isLoggedIn ? <Memoryiron user={this.state.user} />:this.handleNavSwitch()}
+      </div>
         </Router>
       </div>
     )
