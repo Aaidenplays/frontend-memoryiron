@@ -21,7 +21,7 @@ class GameCards extends React.Component {
   constructor () {
     super()
     this.state = {
-      isFlipped: false
+      isFlipped: false,
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -34,7 +34,7 @@ class GameCards extends React.Component {
   render () {
     return (
       <Card>
-      <div onClick={() => this.props.cardChoice(this.props.card)}>
+      <div className='game-cards' onClick={() => this.props.cardChoice(this.props.card)}>
       <ReactCardFlip
           isFlipped={this.state.isFlipped}
           flipDirection='horizontal'
