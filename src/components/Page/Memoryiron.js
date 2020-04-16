@@ -12,12 +12,13 @@ export default class Memoryiron extends Component {
     super()
     this.state = {
       gameDeck: [],
-      playGame: [],
+      game: [],
       gridSize: 1,
       firstCard: 0,
       secondCard: 0,
       isMatch: false,
       score: 0,
+      holdFront: false
     };
   };
 
@@ -53,7 +54,7 @@ export default class Memoryiron extends Component {
   };
 
   nullGame = () => {
-    this.setState({ playGame: [] })
+    this.setState({ game: [] })
     this.setState({ gridSize: 1 })
     this.helperFunctClearStates()
     this.setState({ score: 0 })
@@ -68,8 +69,8 @@ export default class Memoryiron extends Component {
       selectedCardsA.push(card)
     ))
 
-    let playGame = selectedCardsA.sort(() => Math.random() - 0.5);
-    this.setState({ playGame })
+    let game = selectedCardsA.sort(() => Math.random() - 0.5);
+    this.setState({ game })
     this.setState({ gridSize: 4 })
     this.setState({ score: 0 })
     this.helperFunctClearStates()
@@ -84,8 +85,8 @@ export default class Memoryiron extends Component {
       selectedCardsA.push(card)
     ))
 
-    let playGame = selectedCardsA.sort(() => Math.random() - 0.5);
-    this.setState({ playGame })
+    let game = selectedCardsA.sort(() => Math.random() - 0.5);
+    this.setState({ game })
     this.setState({ gridSize: 6 })
     this.setState({ score: 0 })
     this.helperFunctClearStates()
@@ -100,9 +101,9 @@ export default class Memoryiron extends Component {
       selectedCardsA.push(card)
     ))
 
-    let playGame = selectedCardsA.sort(() => Math.random() - 0.5);
+    let game = selectedCardsA.sort(() => Math.random() - 0.5);
 
-    this.setState({ playGame })
+    this.setState({ game })
     this.setState({ gridSize: 8 })
     this.setState({ score: 0 })
     this.helperFunctClearStates()
@@ -114,13 +115,11 @@ export default class Memoryiron extends Component {
         let firstCard = card.id;
         // console.log(firstCard);
         this.setState({ firstCard });
-        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
         break;
       case this.state.firstCard > 0 && this.state.secondCard === 0:
         let secondCard = card.id;
         // console.log(secondCard);
         this.setState({ secondCard });
-        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
         break;
       // no default
     };
@@ -133,46 +132,17 @@ export default class Memoryiron extends Component {
         this.setState({ isMatch: true });
         let score = this.state.score + 2;
         this.setState({ score });
-        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
-        console.log('match')
-        this.helperFunctClearStates()
+        console.log('match');
+        this.helperFunctClearStates();
         break;
       case this.state.firstCard !== this.state.secondCard:
+        console.log('no match');
         this.helperFunctClearStates()
         break;
-      // no default
     };
   };
 
-  // cardMatch = () => {
-  //   switch (true) {
-  //     case this.state.firstCard === this.state.secondCard:
-  //       // alert('Matched!!');
-  //       this.setState({ isMatch: true });
-  //       let score = this.state.score + 2;
-  //       this.setState({ score });
-  //       this.state.playGame.map((card) => {
-  //         if (card.id === this.state.firstCard) {
-  //           card.setState({
-  //             isMatched: true
-  //           })
-  //         }
-  //       })
-  //       // console.log(matchedCards)
-  //       // matchedCards.map()
-  //       // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, isMatched: true } : c) })
-  //       this.helperFunctClearStates()
-  //       break;
-  //     case this.state.firstCard !== this.state.secondCard:
-  //       // alert('no match');
-  //       this.helperFunctClearStates()
-  //       break;
-  //     // no default
-  //   };
-  // };
-
   render() {
-    // console.log(this.state.firstCard, this.state.secondCard)
     return (
       <Container>
         <div>
@@ -180,11 +150,12 @@ export default class Memoryiron extends Component {
           <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user} />
           <MainCanvas
             handleSelect={this.handleSelect}
-            game={this.state.playGame}
+            game={this.state.game}
             gridSize={this.state.gridSize}
             cardChoice={this.cardChoice}
             user={this.props.user}
             score={this.state.score}
+            holdFront={this.state.holdFront}
           />
         </div>
       </Container>

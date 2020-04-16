@@ -15,6 +15,7 @@ export default class GameBoard extends Component {
               key={idx}
               card={card}
               cardChoice={this.props.cardChoice}
+              holdFront={this.props.holdFront}
             />
           ))}
         </Card.Group>

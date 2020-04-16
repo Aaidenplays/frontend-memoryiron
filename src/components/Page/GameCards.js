@@ -37,17 +37,18 @@ export default class GameCards extends Component {
         <div className='game-cards' onClick={() => this.props.cardChoice(this.props.card)}>
           <ReactCardFlip
             isFlipped={this.state.isFlipped}
+
             flipDirection='horizontal'
           >
             <Cardback onClick={this.handleClick}>
-              This is the back of the card.
+            This is the back of the card.
             </Cardback>
-            <Cardfront card={this.props.card} onClick={this.handleClick}>
-              This is the front of the card.
+          <Cardfront card={this.props.card} onClick={this.handleClick}>
+            This is the front of the card.
             </Cardfront>
           </ReactCardFlip>
         </div>
-      </Card>
+      </Card >
     )
   }
 }
