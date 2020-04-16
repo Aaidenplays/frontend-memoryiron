@@ -24,7 +24,8 @@ export default class Memoryiron extends Component {
   componentDidMount() {
     fetch(imgAPIURL)
       .then(res => res.json())
-      .then(gameDeck => console.log(gameDeck))
+      .then(gameDeck => this.setState({ gameDeck }))
+      // .then(gameDeck => console.log(gameDeck))
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -146,8 +147,8 @@ export default class Memoryiron extends Component {
     return (
       <Container>
         <div>
-          <Header user={this.props.user} handleSelect={this.handleSelect}/>
-          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user}/>
+          <Header user={this.props.user} handleSelect={this.handleSelect} />
+          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user} />
           <MainCanvas
             handleSelect={this.handleSelect}
             game={this.state.playGame}
