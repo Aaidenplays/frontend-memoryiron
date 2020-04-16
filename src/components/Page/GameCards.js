@@ -18,7 +18,7 @@ import Cardback from '../Cards/CardBack'
 // };
 
 class GameCards extends React.Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       isFlipped: false,
@@ -26,26 +26,26 @@ class GameCards extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick (e) {
+  handleClick(e) {
     e.preventDefault()
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }))
   }
 
-  render () {
+  render() {
     return (
       <Card>
-      <div className='game-cards' onClick={() => this.props.cardChoice(this.props.card)}>
-      <ReactCardFlip
-          isFlipped={this.state.isFlipped}
-          flipDirection='horizontal'
-        >
-          <Cardback onClick={this.handleClick}>
-            This is the back of the card.
+        <div className='game-cards' onClick={() => this.props.cardChoice(this.props.card)}>
+          <ReactCardFlip
+            isFlipped={this.state.isFlipped}
+            flipDirection='horizontal'
+          >
+            <Cardback onClick={this.handleClick}>
+              This is the back of the card.
           </Cardback>
-          <Cardfront card={this.props.card} onClick={this.handleClick}>
-            This is the front of the card.
+            <Cardfront card={this.props.card} onClick={this.handleClick}>
+              This is the front of the card.
           </Cardfront>
-        </ReactCardFlip>
+          </ReactCardFlip>
         </div>
       </Card>
     )

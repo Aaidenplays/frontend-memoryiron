@@ -24,7 +24,8 @@ export default class Memoryiron extends Component {
   componentDidMount() {
     fetch(imgAPIURL)
       .then(res => res.json())
-      .then(gameDeck => console.log(gameDeck))
+      // .then(gameDeck => console.log(gameDeck))
+      .then(gameDeck => this.setState({ gameDeck }))
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -127,16 +128,15 @@ export default class Memoryiron extends Component {
   cardMatch = () => {
     switch (true) {
       case this.state.firstCard === this.state.secondCard:
-        alert('Matched!!');
+        // alert('Matched!!');
         this.setState({ isMatch: true });
         let allMatch = this.state.allMatch + 2;
         this.setState({ allMatch });
-        this.state.playGame.map((card,idx)=> {
-          let key = idx;
-          if (card.id === this.state.firstCard){
-              card.setState({
-                isMatched: true
-              })
+        this.state.playGame.map((card) => {
+          if (card.id === this.state.firstCard) {
+            card.setState({
+              isMatched: true
+            })
           }
         })
         // console.log(matchedCards)
@@ -145,7 +145,7 @@ export default class Memoryiron extends Component {
         this.helperFunctClearStates()
         break;
       case this.state.firstCard !== this.state.secondCard:
-        alert('no match');
+        // alert('no match');
         this.helperFunctClearStates()
         break;
       // no default
@@ -156,8 +156,8 @@ export default class Memoryiron extends Component {
     return (
       <Container>
         <div>
-          <Header user={this.props.user} handleSelect={this.handleSelect}/>
-          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user}/>
+          <Header user={this.props.user} handleSelect={this.handleSelect} />
+          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user} />
           <MainCanvas
             handleSelect={this.handleSelect}
             game={this.state.playGame}

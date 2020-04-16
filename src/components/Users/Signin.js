@@ -53,29 +53,27 @@ class Signin extends Component {
   componentDidMount = () => {
     fetch('http://localhost:3001/cards')
       .then(resp => resp.json())
-      .then(data => {
+      .then(images => {
         // console.log(data[0].imgurl)
-        this.setState({
-          images: data
-        })
+        this.setState({ images })
       })
   }
 
-  showCards = () => {
-    console.log('IMAGES********::::::: ', this.state.images)
-    if (this.state.images.length > 0) {
-      console.log('WE MADE IT!')
-      return this.state.images.map((image, idx) => (
-        <img key={idx} src={`${image.imgurl}`} />
-      ))
-    }
-  }
+  // showCards = () => {
+  //   // console.log('IMAGES********::::::: ', this.state.images)
+  //   if (this.state.images.length > 0) {
+  //     // console.log('WE MADE IT!')
+  //     return this.state.images.map((image, idx) => (
+  //       <img key={idx} src={`${image.imgurl}`} />
+  //     ))
+  //   }
+  // }
 
-  render () {
+  render() {
     return (
       <div>
         <br />
-        {this.showCards()}
+        {/* {this.showCards()} */}
         <form onSubmit={this.authUser}>
           <label>Username</label>
           <input

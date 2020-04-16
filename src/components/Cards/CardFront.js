@@ -19,7 +19,7 @@ class CardFront extends React.Component {
       <div onClick={this.props.onClick}>
         <img
           className='ui image fluid'
-          src={this.props.card.thumbnailUrl}
+          src={this.props.card.imgurl}
           alt='card'
           onClick={this.playAudio}
         ></img>
