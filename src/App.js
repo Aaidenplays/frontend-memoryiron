@@ -8,9 +8,9 @@ import Memoryiron from './components/Page/Memoryiron.js'
 import Audios from './components/Audios';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
+    this.state = {
       isLoggedIn: false,
       user: undefined
     }
@@ -26,11 +26,12 @@ class App extends React.Component {
   }
 
   handleNavSwitch = () => {
-    return [<Navbar />, 
-    <Route exact path='/signin' render={() => <Signin handleLogIn={this.setIsLoggedIn}/>} />,
-    <Route exact path='/signup' component={Signup} />]
+    return [
+      <Navbar />,
+      <Route exact path='/signin' render={() => <Signin handleLogIn={this.setIsLoggedIn} />} />,
+      <Route exact path='/signup' component={Signup} />
+    ]
   }
-
 
   render() {
     return (
@@ -40,8 +41,8 @@ class App extends React.Component {
       <div className='App'>
       {this.state.isLoggedIn ? <Memoryiron user={this.state.user} />:this.handleNavSwitch()}
       </div>
-    </Router>
-  </div>
+        </Router>
+      </div>
     )
   }
 }

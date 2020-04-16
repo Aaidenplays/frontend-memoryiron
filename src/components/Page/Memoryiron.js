@@ -120,6 +120,7 @@ export default class Memoryiron extends Component {
         this.setState({ secondCard: card.id });
         // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
         break;
+        // no default
     };
   };
 
@@ -147,6 +148,7 @@ export default class Memoryiron extends Component {
         alert('no match');
         this.helperFunctClearStates()
         break;
+        // no default
     };
   };
 
