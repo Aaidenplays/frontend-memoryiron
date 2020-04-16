@@ -5,7 +5,7 @@ import MainCanvas from './MainCanvas';
 import { Container } from 'semantic-ui-react';
 
 
-const testAPIURL = 'http://jsonplaceholder.typicode.com/photos/?_limit=256'
+const imgAPIURL = 'http://localhost:3001/cards';
 
 export default class Memoryiron extends Component {
   constructor() {
@@ -22,9 +22,9 @@ export default class Memoryiron extends Component {
   };
 
   componentDidMount() {
-    fetch(testAPIURL)
+    fetch(imgAPIURL)
       .then(res => res.json())
-      .then(gameDeck => this.setState({ gameDeck }))
+      .then(gameDeck => console.log(gameDeck))
   };
 
   componentDidUpdate(prevProps, prevState) {
