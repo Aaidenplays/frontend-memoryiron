@@ -17,6 +17,7 @@ export default class MainCanvas extends Component {
               game={this.props.game}
               gridSize={this.props.gridSize}
               cardChoice={this.props.cardChoice}
+              score={this.props.score}
             /> :
             <UserProfile
               user={this.props.user}

@@ -17,7 +17,7 @@ import Cardback from '../Cards/CardBack'
 //   };
 // };
 
-class GameCards extends React.Component {
+export default class GameCards extends Component {
   constructor() {
     super()
     this.state = {
@@ -41,14 +41,13 @@ class GameCards extends React.Component {
           >
             <Cardback onClick={this.handleClick}>
               This is the back of the card.
-          </Cardback>
+            </Cardback>
             <Cardfront card={this.props.card} onClick={this.handleClick}>
               This is the front of the card.
-          </Cardfront>
+            </Cardfront>
           </ReactCardFlip>
         </div>
       </Card>
     )
   }
 }
-export default GameCards
