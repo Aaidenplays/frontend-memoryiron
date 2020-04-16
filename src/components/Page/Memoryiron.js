@@ -5,7 +5,7 @@ import MainCanvas from './MainCanvas';
 import { Container } from 'semantic-ui-react';
 
 
-const testAPIURL = 'http://jsonplaceholder.typicode.com/photos/?_limit=256'
+const imgAPIURL = 'http://localhost:3001/cards';
 
 export default class Memoryiron extends Component {
   constructor() {
@@ -22,9 +22,9 @@ export default class Memoryiron extends Component {
   };
 
   componentDidMount() {
-    fetch(testAPIURL)
+    fetch(imgAPIURL)
       .then(res => res.json())
-      .then(gameDeck => this.setState({ gameDeck }))
+      .then(gameDeck => console.log(gameDeck))
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -120,7 +120,7 @@ export default class Memoryiron extends Component {
         this.setState({ secondCard: card.id });
         // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
         break;
-        // no default
+      // no default
     };
   };
 
@@ -148,23 +148,22 @@ export default class Memoryiron extends Component {
         alert('no match');
         this.helperFunctClearStates()
         break;
-        // no default
+      // no default
     };
   };
-
-
 
   render() {
     return (
       <Container>
         <div>
-          <Header user={this.props.user} />
-          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} />
+          <Header user={this.props.user} handleSelect={this.handleSelect}/>
+          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user}/>
           <MainCanvas
             handleSelect={this.handleSelect}
             game={this.state.playGame}
             gridSize={this.state.gridSize}
             cardChoice={this.cardChoice}
+            user={this.props.user}
           />
         </div>
       </Container>

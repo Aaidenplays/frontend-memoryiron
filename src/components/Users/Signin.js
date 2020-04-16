@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 // import { Input } from 'semantic-ui-react'
 
 class Signin extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       username: undefined,
@@ -45,9 +45,7 @@ class Signin extends Component {
         this.setState({
           redirect: true
         })
-        {
-          this.props.handleLogIn(this.state.user)
-        }
+        { this.props.handleLogIn(this.state.user) }
         //Use redirect and pass this user as a current_user prop
       })
   }
