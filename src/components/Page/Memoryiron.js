@@ -132,7 +132,17 @@ export default class Memoryiron extends Component {
         this.setState({ isMatch: true });
         let allMatch = this.state.allMatch + 2;
         this.setState({ allMatch });
-        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
+        this.state.playGame.map((card,idx)=> {
+          let key = idx;
+          if (card.id === this.state.firstCard){
+              card.setState({
+                isMatched: true
+              })
+          }
+        })
+        // console.log(matchedCards)
+        // matchedCards.map()
+        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, isMatched: true } : c) })
         this.helperFunctClearStates()
         break;
       case this.state.firstCard !== this.state.secondCard:

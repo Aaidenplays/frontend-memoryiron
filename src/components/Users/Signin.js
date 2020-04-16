@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 // import { Input } from 'semantic-ui-react'
 
-
 class Signin extends Component {
   constructor() {
     super()
@@ -11,7 +10,8 @@ class Signin extends Component {
       username: undefined,
       // password: undefined,
       user: undefined,
-      redirect: false
+      redirect: false,
+      images: []
     }
   }
 
@@ -50,22 +50,51 @@ class Signin extends Component {
       })
   }
 
-  render() {
+  componentDidMount = () => {
+    fetch('http://localhost:3001/cards')
+      .then(resp => resp.json())
+      .then(data => {
+        // console.log(data[0].imgurl)
+        this.setState({
+          images: data
+        })
+      })
+  }
+
+  showCards = () => {
+    console.log('IMAGES********::::::: ', this.state.images)
+    if (this.state.images.length > 0) {
+      console.log('WE MADE IT!')
+      return this.state.images.map((image, idx) => (
+        <img key={idx} src={`${image.imgurl}`} />
+      ))
+    }
+  }
+
+  render () {
     return (
-      <div><br />
+      <div>
+        <br />
+        {this.showCards()}
         <form onSubmit={this.authUser}>
           <label>Username</label>
-          <input className='ui input' type='text' onChange={this.handleUsername} />
+          <input
+            className='ui input'
+            type='text'
+            onChange={this.handleUsername}
+          />
           {/* <label>Password</label>
           <input type='password' onChange={this.handlePassword}/> */}
           <input type='submit' value='submit' />
         </form>
-        {this.state.redirect ?
-          <Redirect to={{
-            pathname: '/home',
-            state: { currentUser: this.state.user }
-          }} />
-          : null}
+        {this.state.redirect ? (
+          <Redirect
+            to={{
+              pathname: '/home',
+              state: { currentUser: this.state.user }
+            }}
+          />
+        ) : null}
       </div>
     )
   }
