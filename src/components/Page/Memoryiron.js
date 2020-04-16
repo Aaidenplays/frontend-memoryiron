@@ -128,29 +128,44 @@ export default class Memoryiron extends Component {
   cardMatch = () => {
     switch (true) {
       case this.state.firstCard === this.state.secondCard:
-        // alert('Matched!!');
         this.setState({ isMatch: true });
         let allMatch = this.state.allMatch + 2;
         this.setState({ allMatch });
-        this.state.playGame.map((card) => {
-          if (card.id === this.state.firstCard) {
-            card.setState({
-              isMatched: true
-            })
-          }
-        })
-        // console.log(matchedCards)
-        // matchedCards.map()
-        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, isMatched: true } : c) })
+        // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, flipped: true } : c) })
         this.helperFunctClearStates()
         break;
       case this.state.firstCard !== this.state.secondCard:
-        // alert('no match');
         this.helperFunctClearStates()
         break;
-      // no default
     };
   };
+
+  // cardMatch = () => {
+  //   switch (true) {
+  //     case this.state.firstCard === this.state.secondCard:
+  //       // alert('Matched!!');
+  //       this.setState({ isMatch: true });
+  //       let allMatch = this.state.allMatch + 2;
+  //       this.setState({ allMatch });
+  //       this.state.playGame.map((card) => {
+  //         if (card.id === this.state.firstCard) {
+  //           card.setState({
+  //             isMatched: true
+  //           })
+  //         }
+  //       })
+  //       // console.log(matchedCards)
+  //       // matchedCards.map()
+  //       // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, isMatched: true } : c) })
+  //       this.helperFunctClearStates()
+  //       break;
+  //     case this.state.firstCard !== this.state.secondCard:
+  //       // alert('no match');
+  //       this.helperFunctClearStates()
+  //       break;
+  //     // no default
+  //   };
+  // };
 
   render() {
     return (
