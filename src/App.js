@@ -6,6 +6,8 @@ import Navbar from './components/Page/NavbarUser';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Memoryiron from './components/Page/Memoryiron.js'
 import Audios from './components/Audios';
+import memoryIron from './audio/MemoryIron.png'
+
 
 class App extends React.Component {
   constructor() {
@@ -37,6 +39,9 @@ class App extends React.Component {
     return (
       <div>
       <Audios/>
+      {/* <div>
+        <img src={memoryIron}></img> 
+      </div> */}
     <Router>
       <div className='App'>
       {this.state.isLoggedIn ? <Memoryiron user={this.state.user} />:this.handleNavSwitch()}
