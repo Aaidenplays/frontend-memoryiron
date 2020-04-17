@@ -24,9 +24,13 @@ export default class MainCanvas extends Component {
               user={this.props.user}
             />
           }
-          <LeaderBoard />
+          {/* <LeaderBoard /> */}
         </div>
       </Container>
     )
   };
 };
+
+
+
+// parent component Memoryiron

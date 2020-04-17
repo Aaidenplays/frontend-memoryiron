@@ -4,7 +4,7 @@ export default class UserScores extends Component {
   render() {
     return (
       <div>
-        * User Scores Component.
+        <div>{this.props.user.username}</div>
       </div>
     )
   }

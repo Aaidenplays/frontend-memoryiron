@@ -139,7 +139,7 @@ export default class Memoryiron extends Component {
         console.log('no match');
         this.helperFunctClearStates()
         break;
-        // no default
+      // no default
     };
   };
 
@@ -148,14 +148,19 @@ export default class Memoryiron extends Component {
       <Container>
         <div>
           <Header user={this.props.user} handleSelect={this.handleSelect} />
-          <UtilityBar handleSelect={this.handleSelect} game={this.state.gameDeck} user={this.props.user} />
+          <UtilityBar
+            handleSelect={this.handleSelect}
+            game={this.state.gameDeck}
+            user={this.props.user}
+            score={this.state.score}
+          />
           <MainCanvas
             handleSelect={this.handleSelect}
             game={this.state.game}
             gridSize={this.state.gridSize}
             cardChoice={this.cardChoice}
             user={this.props.user}
-            score={this.state.score}
+            // score={this.state.score}
             holdFront={this.state.holdFront}
           />
         </div>
@@ -163,3 +168,6 @@ export default class Memoryiron extends Component {
     )
   };
 };
+
+
+// parent component App
