@@ -139,6 +139,7 @@ export default class Memoryiron extends Component {
         console.log('no match');
         this.helperFunctClearStates()
         break;
+        // no default
     };
   };
 
