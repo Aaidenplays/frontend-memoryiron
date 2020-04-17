@@ -8,7 +8,6 @@ export default class Header extends Component {
     return (
       <div className="header">
         <h1 className="ui header">Memoryiron</h1>
-        {/* {this.props.user ? (<p>Current User: {this.props.user.username}</p>) : null} */}
         <GameTimer />
         <NavbarGamePage handleSelect={this.props.handleSelect} />
       </div>

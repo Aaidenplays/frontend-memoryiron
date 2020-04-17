@@ -7,8 +7,9 @@ export default class GameBoard extends Component {
   render() {
     return (
       <div>
-        <h2>Game Board</h2>
-        <div>Score: {this.props.score}</div>
+        <p></p>
+        {/* <h2>Game Board</h2> */}
+        {/* <div>Score: {this.props.score}</div> */}
         <Card.Group itemsPerRow={this.props.gridSize}>
           {this.props.game.map((card, idx) => (
             <GameCards
