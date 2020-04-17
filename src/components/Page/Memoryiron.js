@@ -124,6 +124,15 @@ export default class Memoryiron extends Component {
     };
   };
 
+  playCorrectAudio = () => {
+    const audioEl = document.getElementsByClassName('audio-correct')[0]
+    audioEl.play()
+  }
+  playIncorrectAudio = () => {
+    const audioEl = document.getElementsByClassName('audio-incorrect')[0]
+    audioEl.play()
+  }
+
   cardMatch = () => {
     switch (true) {
       case this.state.firstCard === this.state.secondCard:
@@ -131,14 +140,15 @@ export default class Memoryiron extends Component {
         this.setState({ isMatch: true });
         let allMatch = this.state.allMatch + 2;
         this.setState({ allMatch });
-        this.state.playGame.map((card,idx)=> {
-          let key = idx;
-          if (card.id === this.state.firstCard){
-              card.setState({
-                isMatched: true
-              })
-          }
-        })
+        {this.playCorrectAudio()}
+        // this.state.playGame.map((card,idx)=> {
+        //   let key = idx;
+        //   if (card.id === this.state.firstCard){
+        //       card.setState({
+        //         isMatched: true
+        //       })
+        //   }
+        // })
         // console.log(matchedCards)
         // matchedCards.map()
         // this.setState({ playGame: this.state.playGame.map((c) => c.id === card.id ? { ...c, isMatched: true } : c) })
@@ -146,6 +156,7 @@ export default class Memoryiron extends Component {
         break;
       case this.state.firstCard !== this.state.secondCard:
         alert('no match');
+        {this.playIncorrectAudio()}
         this.helperFunctClearStates()
         break;
       // no default
