@@ -17,7 +17,7 @@ import Cardback from '../Cards/CardBack'
 //   };
 // };
 
-class GameCards extends React.Component {
+export default class GameCards extends Component {
   constructor() {
     super()
     this.state = {
@@ -37,18 +37,18 @@ class GameCards extends React.Component {
         <div className='game-cards' onClick={() => this.props.cardChoice(this.props.card)}>
           <ReactCardFlip
             isFlipped={this.state.isFlipped}
+
             flipDirection='horizontal'
           >
             <Cardback onClick={this.handleClick}>
-              This is the back of the card.
-          </Cardback>
-            <Cardfront card={this.props.card} onClick={this.handleClick}>
-              This is the front of the card.
-          </Cardfront>
+            This is the back of the card.
+            </Cardback>
+          <Cardfront card={this.props.card} onClick={this.handleClick}>
+            This is the front of the card.
+            </Cardfront>
           </ReactCardFlip>
         </div>
-      </Card>
+      </Card >
     )
   }
 }
-export default GameCards
