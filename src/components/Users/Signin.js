@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 // import { Input } from 'semantic-ui-react'
+import memoryIron from '../../audio/MemoryIron.png'
 
 class Signin extends Component {
   constructor() {
@@ -59,22 +60,24 @@ class Signin extends Component {
       })
   }
 
-  // showCards = () => {
-  //   // console.log('IMAGES********::::::: ', this.state.images)
-  //   if (this.state.images.length > 0) {
-  //     // console.log('WE MADE IT!')
-  //     return this.state.images.map((image, idx) => (
-  //       <img key={idx} src={`${image.imgurl}`} />
-  //     ))
-  //   }
-  // }
+  showCards = () => {
+    // console.log('IMAGES********::::::: ', this.state.images)
+    if (this.state.images.length > 0) {
+      // console.log('WE MADE IT!')
+      return this.state.images.map((image, idx) => (
+        <img key={idx} src={`${image.imgurl}`} />
+      ))
+    }
+  }
 
   render() {
     return (
       <div>
+      <div align= 'center'>
+        <img className='bigLogo' src={memoryIron}></img> 
+      </div>
         <br />
-        {/* {this.showCards()} */}
-        <form onSubmit={this.authUser}>
+        <form className='signform'onSubmit={this.authUser}>
           <label>Username</label>
           <input
             className='ui input'
@@ -93,6 +96,7 @@ class Signin extends Component {
             }}
           />
         ) : null}
+        {this.showCards()}
       </div>
     )
   }

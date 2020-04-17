@@ -1,9 +1,25 @@
 body {
+  /* background: '../audio/Memoryiron-background.jpeg'; */
+  background-image: url(./audio/Memoryiron-background.jpeg);
   height: 100%;
 }
+/* 
+.container{
+  background-image: url(./images/car.png);
+} */
 
 .App {
   text-align: center;
+}
+
+.bigLogo {
+  text-align: center;
+}
+
+.signForm {
+  width: 200px;
+  height: 2500px;
+  margin: 50 auto;
 }
 
 .App-logo {
