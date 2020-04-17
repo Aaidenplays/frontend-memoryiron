@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GameBoard from './GameBoard';
-import LeaderBoard from './LeaderBoard';
+// import LeaderBoard from './LeaderBoard';
 import UserProfile from './UserProfile';
 import { Container } from 'semantic-ui-react';
 
