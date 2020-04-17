@@ -160,8 +160,8 @@ export default class Memoryiron extends Component {
         this.helperFunctClearStates()
         break
       // no default
-    }
-  }
+    };
+  };
 
   // autoFlip = (card1, card2) => {
   //   card1 = this.state.gameDeck.filter(card => {
@@ -184,7 +184,7 @@ export default class Memoryiron extends Component {
   //   }
   // }
 
-  render () {
+  render() {
     return (
       <Container>
         <div>
@@ -193,6 +193,7 @@ export default class Memoryiron extends Component {
             handleSelect={this.handleSelect}
             game={this.state.gameDeck}
             user={this.props.user}
+            score={this.state.score}
           />
           <MainCanvas
             handleSelect={this.handleSelect}
@@ -200,11 +201,15 @@ export default class Memoryiron extends Component {
             gridSize={this.state.gridSize}
             cardChoice={this.cardChoice}
             user={this.props.user}
-            score={this.state.score}
+            // score={this.state.score}
             holdFront={this.state.holdFront}
           />
         </div>
       </Container>
     )
-  }
-}
+  };
+};
+
+
+// parent component App
+
